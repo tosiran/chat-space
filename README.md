@@ -27,45 +27,36 @@ Things you may want to cover:
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|username|string|null: false|
+|name|string|null: false|
 |email|string|null: false|
 |password|string|null: false|
 ### Association
 - has_many :messages
-- has_many :groups
+- has_many :menbers
+- has_many  :groups,  through:  :members
 
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|groupname|text|null: false|
-|user_id|integer|null: false, foreign_key: true|
+|name|text|null: false|
 ### Association
-- belongs_to :user
 - has_many :messages
-- has_many :group_members
-- has_many  :menbers,  through:  :group_members
+- has_many :group_users
+- has_many  :users,  through:  :group_users
 
-## menbersテーブル
+## membersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|text|null: false|
-### Association
-- has_many :group_members
-- has_many  :group,  through:  :group_members
-
-## group_membersテーブル
-|Column|Type|Options|
-|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
-|menber_id|integer|null: false, foreign_key: true|
 ### Association
-- belongs_to :group
-- belongs_to :member
+  belongs_to :group
+  belongs_to :user
 
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|text|null: false|
+|text|text||
 |image|text||
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
