@@ -29,7 +29,7 @@
           width: 60px;
           text-align: right;
           .icon{
-            color:$white;
+            color: $white;
             display: inline-block;
             margin-left: 5px;
             }
@@ -38,16 +38,18 @@
       }
 
     &__grouplist{
-      margin: 20px 20px 40px 20px;
-      color:$white;
-      .title{
-      font-size: 15px;
-      margin-bottom: 5px;
-      font-weight: bold;
-      }
-      .text{
-      font-size: 11px;
-      font-weight: bold;
+      .group{
+        margin: 20px 20px 40px 20px;
+        color: $white;
+        .title{
+          font-size: 15px;
+          margin-bottom: 5px;
+          font-weight: bold;
+        }
+        .text{
+          font-size: 11px;
+          font-weight: bold;
+        }
       }
     }
   }
@@ -77,66 +79,74 @@
           padding:0 20px;
         }
       }
-
       &__member{
         color: #999999;
         font-size: 12px;
         margin:0 0 0 40px;
       }
     }
-    &__message{
+
+    .messages{
       height: calc(100vh - 190px);
       background-color: #fafafa;
-      &__content{
-        display: flex;
-        padding:35px 0 12px 40px;
-        .name{
-          font-size: 16px;
-          font-weight: bold;
-          color:#333333;
-          margin-right: 5px;
+      .message{
+        &__content{
+          display: flex;
+          padding:35px 0 12px 40px;
+          .name{
+            font-size: 16px;
+            font-weight: bold;
+            color:black;
+            margin-right: 5px;
+          }
+          .time{
+            color: #999999;
+            font-size: 12px;
+          }
         }
-        .time{
-          color: #999999;
-          font-size: 12px;
+        &__text{
+          color:#434a54;
+          font-size: 14px;
+          margin: 0 0 46px 40px;
         }
-      }
-      &__text{
-        color:#434a54;
-        font-size: 14px;
-        margin: 0 0 46px 40px;
       }
     }
     .content{
       background-color: #d2d2d2;
       height: 90px;
       display: flex;
-      .text{
-        height: 50px;
-        margin:20px 15px 20px 40px;  
+      
+      
+      .new_message{
+        display: flex;
         width: 100%;
-        position: relative;
         
-      }
-      .image{
-        position: absolute;
-        right: 165px;
-        line-height: 90px;
-        input{
-          display: none;
-
+        .text{
+          height: 50px;
+          width: 100%;
+          margin:20px 15px 20px 40px;  
+          position: relative;
+          
         }
-      }
-      .btn{
-        width: 100px;
-        height: 50px;
-        padding: 0 30px;
-        margin: 20px 40px 20px 0;
-        background-color:$skyblue;
-        font-size: 16px;
-        cursor: pointer;
-        color:$white;
-        text-align: center;
+        .btn{
+          width: 100px;
+          height: 50px;
+          padding: 0 30px;
+          margin: 20px 40px 20px 0;
+          background-color:$skyblue;
+          font-size: 16px;
+          cursor: pointer;
+          color:$white;
+          text-align: center;
+        }
+        .image{
+          position: absolute;
+          right: 165px;
+          line-height: 90px;
+          input{
+            display: none;
+          }
+        }
       }
     }
   }
