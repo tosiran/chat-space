@@ -6,11 +6,16 @@
 
       .sidebar__top__item__icon 
         .sidebar__top__item__icon__edit 
-        = link_to "#", class:"icon" do
+        = link_to new_group_path, class:"icon" do
           %i.far.fa-edit  
         = link_to edit_user_path(current_user), class:"icon" do
           %i.fas.fa-cog  
   
   .sidebar__grouplist
-    %h2.title techcamp
-    %h2.text まだメッセージがありません
+    - current_user.groups.each do |group|
+      .group
+        = link_to '#' do
+          %h2.title
+            = group.name
+          %h2.text
+            メッセージはまだありません。
