@@ -1,27 +1,26 @@
+
+
 .main
   .main__top
     .main__top__group
-      %h2.groupname test
-      = link_to "#", class:"btn" do
+      %h2.groupname 
+        = @group.name
+      = link_to edit_group_path(@group.id), class:"btn" do
         %h2 Edit
     .main__top__member
-      %h2.member Member : masa
+      %h2.member
+        - @group.users.each do |user|
+          #{user.name}
+    
+  .messages
+    = render @messages
 
-  .main__message
-    .main__message__content
-      %h2.name masa
-      %h2.time 2019/11/20(Wed)17:43:01
 
-    .main__message__text おはよう！
-    .main__message__content
-      %h2.name masa
-      %h2.time 2019/11/20(Wed)17:43:34
-    .main__message__text 今日は夜から雨
+  .content
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'text', placeholder: 'type a message'
+      = f.label :image, class: 'image' do
+        = icon('fas', 'image', class: 'i')
+        = f.file_field :image, class: 'file'
+      = f.submit 'Send', class: 'btn'
 
-  %form.content
-    %input.text{ placeholder: "type a message", type: "text"}
-      %label.image               
-        %i.fa.fa-image
-        %input.file{type: 'file'}  
-    %input.btn{ type: 'submit', value: 'Send'} 
-          
