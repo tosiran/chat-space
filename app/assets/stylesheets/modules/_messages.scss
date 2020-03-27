@@ -41,14 +41,21 @@
       .group{
         margin: 20px 20px 40px 20px;
         color: $white;
-        .title{
-          font-size: 15px;
-          margin-bottom: 5px;
-          font-weight: bold;
-        }
-        .text{
-          font-size: 11px;
-          font-weight: bold;
+        a{
+          text-decoration: none;
+          .title{
+            font-size: 15px;
+            color: $white;
+            text-decoration: none;
+            margin-bottom: 5px;
+            
+          }
+          .text{
+            font-size: 11px;
+
+            text-decoration: none;
+            color: $white;
+          }
         }
       }
     }
@@ -83,7 +90,7 @@
       &__member{
         color: #999999;
         font-size: 12px;
-        margin:0 0 0 40px;
+        margin:10px 0 0 40px;
       }
     }
 

@@ -6,9 +6,10 @@
       %h2.groupname 
         = @group.name
       = link_to edit_group_path(@group.id), class:"btn" do
-        %h2 Edit
+        %h3 Edit
     .main__top__member
-      %h2.member
+      %h3.member
+        Member :
         - @group.users.each do |user|
           #{user.name}
     
@@ -18,7 +19,7 @@
 
   .content
     = form_for [@group, @message] do |f|
-      = f.text_field :content, class: 'text', placeholder: 'type a message'
+      = f.text_field :content, class: 'text', placeholder: '  type a message'
       = f.label :image, class: 'image' do
         = icon('fas', 'image', class: 'i')
         = f.file_field :image, class: 'file'
