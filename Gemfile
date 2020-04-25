@@ -65,6 +65,9 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog-aws'
 
+# gem 'rails', '4.1.0'
+
+
 group :production do
   gem 'unicorn', '5.4.1'
 end
